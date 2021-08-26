@@ -3,14 +3,18 @@ Rails.application.routes.draw do
 
 root "departments#index"
 
-get "/departments", to: "departments#index"
-get "/departments/:id", to: "departments#show"
-get "/departments/new", to: "departments#new"
-post "/departments", to: "departments#create"
-get "/departments/:id/edit", to: "departments#edit"
-put "/departments/:id", to: "departments#update"
-patch "/departments/:id", to: "departments#update"
-delete "/departments/:id", to: "departments#destroy"
+resources :departments do
+  resources :items
+end
+
+# get "/departments", to: "departments#index"
+# get "/departments/new", to: "departments#new"
+# post "/departments", to: "departments#create"
+# get "/departments/:id", to: "departments#show"
+# get "/departments/:id/edit", to: "departments#edit"
+# put "/departments/:id", to: "departments#update"
+# patch "/departments/:id", to: "departments#update"
+# delete "/departments/:id", to: "departments#destroy"
 
 
 end
