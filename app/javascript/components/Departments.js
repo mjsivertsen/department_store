@@ -3,8 +3,7 @@ import React from "react";
 const Index = (props) => {
   return(
     <div>
-    <h1>Departments will be listed below</h1>
-    <a href={`/departments/new`}> New Department </a>
+    <h1> Welcome to FleaSwap </h1>
 
     {props.departments.map((department) => (
       <div>
@@ -20,6 +19,12 @@ const Index = (props) => {
         
       </div>
     ))}
+    
+    <div>
+    <a href={`/departments/new`}> New Department </a>
+    {/* <a href={`/about`}> About FleaSwap </a> */}
+    </div>
+    
     </div>
   );
 };

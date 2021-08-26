@@ -7,6 +7,7 @@ resources :departments do
   resources :items
 end
 
+
 # get "/departments", to: "departments#index"
 # get "/departments/new", to: "departments#new"
 # post "/departments", to: "departments#create"
