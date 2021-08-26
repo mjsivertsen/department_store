@@ -1,10 +1,17 @@
 import React from "react";
 
 const Department = (props) => {
+  const {department} = props
   return (
     <div>
-      <h1>{`${props.department.name}`}</h1>
-      <h2>{`${props.department.description}`}</h2>
+      <h1>{`${department.name}`}</h1>
+      <h2>{`${department.description}`}</h2>
+    
+      <div> 
+          <a href={`/departments`}>Return to Homepage</a>
+          <a href={`/departments/${department.id}/edit`}> Edit {`${department.name}`}</a>
+          <a href={`/departments/${department.id}`} data-method="delete"> Delete {`${department.name}`}</a>
+       </div>
     </div>
   );
 };

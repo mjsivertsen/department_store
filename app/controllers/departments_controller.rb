@@ -1,6 +1,6 @@
 class DepartmentsController < ApplicationController
  
- before_action :set_department, only:[:show, :edit, :update]
+ before_action :set_department, only:[:show, :edit, :update, :destroy]
 
 
 def index
@@ -36,6 +36,10 @@ def update
   end
 end
 
+def destroy
+  @department.delete
+  redirect_to root_path
+end
 
 
 private

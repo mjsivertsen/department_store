@@ -19,6 +19,11 @@ const EditDepartment = (props) => {
       <div style={{margin:"10px"}}>
       <button type="submit">Update</button>
       </div>
+
+      <div>
+        <a href={`/departments`}>Return to Homepage</a>
+        <a href={`/departments/${department.id}`} data-method="delete"> Delete {`${department.name}`}</a>
+      </div>
       
       </form>
     </div>
