@@ -15,7 +15,7 @@ end
 def create
   @department = Department.new(department_params)
   if(@department.save)
-    redirect_to root_path
+    redirect_to departments_path
   else
   end
 end

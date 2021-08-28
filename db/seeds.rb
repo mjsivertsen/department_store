@@ -9,29 +9,41 @@
 Department.destroy_all
 Item.destroy_all
 
-clothes = Department.create(name: "Clothes", description: "The highest of fashion, the greatest of the lastest.")
-food = Department.create(name: "Food", description: "Neither delicious nor nutritious, yet somehow irresistable.")
-novelty = Department.create(name: "Novelty", description: "Pointless yet necessary.")
+health = Department.create(name: "Health Items", description: "Items to rejuvenate your magic, health, or both.")
+#recovery heart, red potion, green, blue potion
+deku = Department.create(name:"Deku Stuff", description: "Deku stuff from the Kokiri Forest.")
+#deku stick, deku nuts, deku shield, deku seeds
+tunics = Department.create(name:"Tunics", description: "Hottest Fashion in Hyrule")
+#red tunic, blue tunic
+weapons = Department.create(name:"Weapons", description: "Everything you need to save the world.")
+#bombs, arrows, hylian shield, 
+odds = Department.create(name: "Odd Stuff", description: "This is the weird stuff that has a very specific purpose.")
+#blue fire, bottle bug, fish, poe, fairy)
 
-puts clothes
-puts food
-puts novelty
+heart = health.items.create(name:"Recovery Heart", price: "10 Rupees", description: "Instantly refills one heart container.")
+redp = health.items.create(name:"Red Potion", price: "30 Rupees", description: "Refills all health; single use.")
+greenp = health.items.create(name:"Green Potion", price: "30 Rupees", description: "Refills all magic; single use.")
+bluep = health.items.create(name:"Blue Potion", price: "100 Rupees", description: "Refills all health and magic; single use.")
 
-dress = clothes.items.create(name: "Dreamy Dress", description: "A beautiful handmade dress that will make you look like a figment of someone's imagination")
-pants = clothes.items.create(name: "Pants Don't Dance", price: 34.99, description: "Pants might not dance by themselves, but once you're wearing these bad boys you'll have a hard time sitting still!")
-shirt = clothes.items.create(name: "Heart On Your Sleeve", price: 19.99, description: "Hand-stitched and made with love.")
+stick = deku.items.create(name:"Deku Stick", price: "10 Rupees", description: "A long branch gathered from the Great Deku Tree.  Can be used as a weapon, but it will break.")
+nuts = deku.items.create(name:"Deku Nuts", price: "15 Rupees", description: "Used to stun enemies by throwing them.")
+seeds = deku.items.create(name: "Deku Seeds", price: "30 Rupees", description:"Slingshot ammunition.")
+dshield = deku.items.create(name: "Deku Shield", price: "40 Rupees", description:"Wooden shield engraved with the symbol of the Kokiri." )
 
-m_chocolate = food.items.create(name: "Loving You (The Milky Way)", price: 29.99, description: "Made to order heart-shaped milk chocolate truffles to show how much you love whoever eats them.")
-d_chocolate = food.items.create(name: "Loving You with the Lights Off", price: 29.99, description: "Made to order heart-shaped dark chocolate truffles to show how much you love whoever eats them.")
-w_chocolate = food.items.create(name: "Loving you in the Light of Day", price: 29.99, description: "Made to order heart-shaped white chocolate truffles to show how much you love whoever eats them.  A mix of milk, dark, and white.")
-mixed_chocolate = food.items.create(name: "Chocolots of Love", price: 29.99, description: "Made to order heart-shaped chocolate truffles to show how much you love whoever eats them.  A mix of milk, dark, and white chocolate.")
-mixed_chocolate_filled = food.items.create(name: "Fill and Bestill My Heart", price: 39.99, description: "Made to order heart-shaped chocolate truffles filled with a variety of flavored creams and caramel.  A mix of milk, dark, and white.")
-custom_chocolate = food.items.create(name: "Whatever Way You Like It", price: 44.99, description: "Made to order heart-shaped chocolate truffle.  Whatever variety of chocolate filled with whatever variety of flavored creams and caramel that you choose.")
-driedfruit = food.items.create(name: "Dry Your Eyes", price: 14.99, description: "Dried fruits sprinkled with a mix of sugar, tartaric acid, and citric acid.  Best way to comfort yourself when the vibes are sour.")
-nuts = food.items.create(name: "Driving Me Nuts", price: 9.99, description: "Roasted and salted mixed nuts, for when you're feeling roasted, salty, and a little to close to the deep-end.")
+rtunic = tunics.items.create(name:"Red Tunic", price: "200 Rupees", description:"Heat-resistence tunic, fabulous red color.")
+btunic = tunics.items.create(name:"Blue Tunic", price: "300 Rupees", description:"Gorgeous blue tunic that allows one to breathe underwater.")
 
-Item.create(name: "Scavenged Skull", price: 69.99, description: "Roadkill deer skull that I found and cleaned up.", department_id:novelty.id)
-Item.create(name: "Random Antique", price: 13.99, description: "I don't know what this is, but it's definitely old.", department_id:novelty.id)
+bombs = weapons.items.create(name:"Bomb", price: "5 Rupees Each", description:"Explosive. Comes in 5pack (25 Rupees) or 10pack (50 Rupees).")
+wbombs = weapons.items.create(name:"Wholesale Bombs", price: "80 Rupees for 20 Bombs, or 120 Rupees for 40 Bombs", description:"Wholesale Bombs.  20pack or 40pack.")
+arrows = weapons.items.create(name:"Arrows", price: "2 Rupees Each", description: "Ammunition for bow.  Comes in 10pack or 20pack.")
+warrows = weapons.items.create(name:"Wholesale Arrows", price: "90 Rupees", description: "Ammunition for bow.  50pack.")
+hshield = weapons.items.create(name:"Hylian Shield", price: "80 Rupees", description: "Big, heavy, metal shield with a Hylian design.")
+
+bfire = odds.items.create(name:"Blue Fire", price: "300 Rupees", description:"Magic fire that can be carried in a bottle.  Melts red ice.")
+bug = odds.items.create(name:"Bug in a Bottle", price: "50 Rupees", description:"Bug in a bottle that likes to dig.")
+fish = odds.items.create(name:"Fish", price:"200 Rupees", description:"Fish that can be carried in a bottle.  Tasty.")
+fairy = odds.items.create(name:"Fairy", price:"50 Rupees", description:"Fairy that can be carried in a bottle.  Restores all health, even after death.")
+poe = odds.items.create(name:"Poe", price:"30 Rupees", description:"Ghosts that can be captured in a bottle.")
 
 
 puts "seeded #{Department.all.size} departments"

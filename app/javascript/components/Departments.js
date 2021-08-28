@@ -3,7 +3,9 @@ import React from "react";
 const Index = (props) => {
   return(
     <div>
-    <h1> Welcome to FleaSwap </h1>
+    <h1> Welcome to the Shop </h1>
+    <p>Please see all departments listed below.</p>
+    <a href={`/departments/new`}> New Department </a>
 
     {props.departments.map((department) => (
       <div>
@@ -12,18 +14,15 @@ const Index = (props) => {
         <p>{department.description}</p>
         
         <div> 
-          <a href={`/departments/${department.id}`}> Go to {`${department.name}`}</a>
-          <a href={`/departments/${department.id}/edit`}> Edit {`${department.name}`}</a>
-          <a href={`/departments/${department.id}`} data-method="delete"> Delete {`${department.name}`}</a>
+          <a href={`/departments/${department.id}/items`}>Item List for {department.name}</a>
+          <br/>
+          <a href={`/departments/${department.id}/edit`}> Edit {department.name}</a>
+          <br/>
+          <a href={`/departments/${department.id}`} data-method="delete"> Delete {department.name}</a>
         </div>
         
       </div>
     ))}
-    
-    <div>
-    <a href={`/departments/new`}> New Department </a>
-    {/* <a href={`/about`}> About FleaSwap </a> */}
-    </div>
     
     </div>
   );
