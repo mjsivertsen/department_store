@@ -19,10 +19,11 @@ before_action :set_item, only: [:show, :edit, :update, :destroy]
     end
 
     def show
-      render component: "Item", props: {department: @department, item:@item}
+      render component: "Item", props: {department: @department, item: @item}
     end
 
     def edit
+      render component: "EditItem", props: {department: @department, item: @item}
     end
 
     def update

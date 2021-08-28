@@ -12,7 +12,7 @@ const NewItem = (props) => {
         <p>Please enter item price</p>
         <input name="item[price]" placeholder="$uper Cool Price"/>
         <p>Please enter item description</p>
-        <input name="item[description]" placeholder="Super Cool Description"/>
+        <input style={{width:"500px"}} name="item[description]" placeholder="Super Cool Description"/>
         <br/>
         <button style={{margin:"6px"}} type="submit">Create Item</button>
       </form>
