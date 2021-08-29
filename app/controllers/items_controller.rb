@@ -27,9 +27,15 @@ before_action :set_item, only: [:show, :edit, :update, :destroy]
     end
 
     def update
+      if @item.update(item_params)
+        redirect_to department_items_path
+      else
+      end
     end
 
     def destroy
+      @item.delete
+      redirect_to department_items_path
     end
 
 

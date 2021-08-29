@@ -24,6 +24,8 @@ const Items = (props) => {
         <a href={`/departments/${department.id}/items/${item.id}`}>View {item.name}</a>
         <br/>
         <a href={`/departments/${department.id}/items/${item.id}/edit`}>Edit {item.name}</a>
+        <br/>
+        <a href={`/departments/${department.id}/items/${item.id}`} data-method="delete">Delete {item.name}</a>
       </div>
     ))}
    </div>

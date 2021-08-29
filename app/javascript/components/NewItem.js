@@ -17,6 +17,10 @@ const NewItem = (props) => {
         <button style={{margin:"6px"}} type="submit">Create Item</button>
       </form>
 
+      <a href={`/departments/${department.id}/items`}>Return to {department.name}</a>
+      <br/>
+      <a href={`/departments`}>Return to Homepage</a>
+
     </div>
   );
 };

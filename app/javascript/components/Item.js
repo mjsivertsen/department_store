@@ -5,9 +5,11 @@ const Item = (props) => {
   return (
     <div>
       <h1>{item.name}</h1>
-      <h3>${`${item.price}`}</h3>
+      <h3>{`${item.price}`}</h3>
       <p>{item.description}</p>
-      <a href={`/departments/${department.id}/items/${item.id}/edit`}>Edit Item</a>
+      <a href={`/departments/${department.id}/items/${item.id}/edit`}>Edit {item.name}</a>
+      <br/>
+      <a href={`/departments/${department.id}/items/${item.id}`} data-method="delete">Delete {item.name}</a>
       <br/>
       <a href={`/departments/${department.id}/items`}>Return to {department.name}</a>
       <br/>

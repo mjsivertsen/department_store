@@ -3,7 +3,7 @@ import React from "react";
 const Index = (props) => {
   return(
     <div>
-    <h1> Welcome to the Shop </h1>
+    <h1> Welcome to the Zelda Shop </h1>
     <p>Please see all departments listed below.</p>
     <a href={`/departments/new`}> New Department </a>
 

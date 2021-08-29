@@ -14,10 +14,10 @@ const NewDepartment = () => {
       <div style={{margin:"10px"}}>
       <button type="submit">Create Department</button>
       </div>
-
-      <a href={`/departments`}>Return to Homepage</a>
     
     </form>
+
+    <a href={`/departments`}>Return to Homepage</a>
     </div>
   );
   };

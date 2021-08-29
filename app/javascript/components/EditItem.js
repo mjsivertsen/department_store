@@ -23,6 +23,13 @@ const EditItem = (props) => {
       <button type="submit">Update</button>
       </div>
     </form>
+      <a href={`/departments/${department.id}/items/${item.id}`} data-method="delete">Delete {item.name}</a>
+      <br/>
+      <a href={`/departments/${department.id}/items/${item.id}`}>Return to {item.name}</a>
+      <br/>
+      <a href={`/departments/${department.id}/items`}>Return to {department.name}</a>
+      <br/>
+      <a href={`/departments`}>Return to Homepage</a>
   </div>
   )
 }
