@@ -8,9 +8,10 @@
 
 Department.destroy_all
 Item.destroy_all
+# Comment.destroy_all
 
 health = Department.create(name: "Health Items", description: "Items to rejuvenate your magic, health, or both.")
-#recovery heart, red potion, green, blue potion
+#recovery heart, red potion,green, blue potion
 deku = Department.create(name:"Deku Stuff", description: "Deku stuff from the Kokiri Forest.")
 #deku stick, deku nuts, deku shield, deku seeds
 tunics = Department.create(name:"Tunics", description: "Hottest Fashion in Hyrule")
@@ -24,6 +25,10 @@ heart = health.items.create(name:"Recovery Heart", price: "10 Rupees", descripti
 redp = health.items.create(name:"Red Potion", price: "30 Rupees", description: "Refills all health; single use.")
 greenp = health.items.create(name:"Green Potion", price: "30 Rupees", description: "Refills all magic; single use.")
 bluep = health.items.create(name:"Blue Potion", price: "100 Rupees", description: "Refills all health and magic; single use.")
+
+# redp.comments.create(purchased_by: "Ganondorf", body:"Doesn't taste very good, but makes you feel good.")
+# greenp.comments.create(purchased_by: "randomHylian404", body: "Absolutely the most disgusting thing I've ever tasted.")
+# bluep.comments.create(purchased_by: "LinkOffical", body: "Expensive.  Cheaper to buy two potions that combined do the same thing.")
 
 stick = deku.items.create(name:"Deku Stick", price: "10 Rupees", description: "A long branch gathered from the Great Deku Tree.  Can be used as a weapon, but it will break.")
 nuts = deku.items.create(name:"Deku Nuts", price: "15 Rupees", description: "Used to stun enemies by throwing them.")
@@ -46,8 +51,9 @@ fairy = odds.items.create(name:"Fairy", price:"50 Rupees", description:"Fairy th
 poe = odds.items.create(name:"Poe", price:"30 Rupees", description:"Ghosts that can be captured in a bottle.")
 
 
+
 puts "seeded #{Department.all.size} departments"
 puts "seeded #{Item.all.size} items"
-
+# puts "seeded #(Comment.all.size} items"
 
 

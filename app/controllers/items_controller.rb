@@ -3,7 +3,7 @@ before_action :set_department
 before_action :set_item, only: [:show, :edit, :update, :destroy]
 
     def index
-      render component: "Items", props:{department: @department, items: @department.items}
+      render component: "Items", props:{department: @department, items: @department.items }
     end
 
     def new
@@ -19,7 +19,7 @@ before_action :set_item, only: [:show, :edit, :update, :destroy]
     end
 
     def show
-      render component: "Item", props: {department: @department, item: @item}
+      render component: "Item", props: { department: @department, item: @item, comments: @item.comments }
     end
 
     def edit
@@ -52,6 +52,10 @@ before_action :set_item, only: [:show, :edit, :update, :destroy]
 
     def set_item
       @item = @department.items.find(params[:id])
+    end
+
+    def set_comments
+      @comments = @item.comments.all
     end
 
     def department_params

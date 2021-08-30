@@ -9,7 +9,7 @@ const NewDepartment = () => {
       <p> Enter the department name:</p>
       <input name="department[name]" />
       <p> Enter the department description: </p>
-      <input style={{width:"500px"}} name="department[description]" />
+      <input style={{border:"500px"}} name="department[description]" />
       
       <div style={{margin:"10px"}}>
       <button type="submit">Create Department</button>
