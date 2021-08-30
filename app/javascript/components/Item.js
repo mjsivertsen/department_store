@@ -16,12 +16,27 @@ const Item = (props) => {
         )
       });
     };
+    const NewComment = (props) => {
+      return (
+        <div>
+          <form action={`/departments/${department.id}/items/${item.id}/comments`} method="post">
+            <input name="comment[purchased_by]" placeholder="Your Name Here"/>
+            <br/>
+            <input style={{width:"500px"}} name="comment[body]" placeholder="Comment Here"/>
+            <br/>
+            <button type="submit">Submit Comment</button>
+          </form>
+        </div>
+      );
+    };
   return (
     <div>
       <h1>{item.name}</h1>
       <h3>{`${item.price}`}</h3>
       <p>{item.description}</p>
       {renderComments()}
+      <h4>Leave a Comment!</h4>
+      {NewComment()}
     <a href={`/departments/${department.id}/items/${item.id}/edit`}>Edit {item.name}</a>
     <br/>
     <a href={`/departments/${department.id}/items/${item.id}`} data-method="delete">Delete {item.name}</a>

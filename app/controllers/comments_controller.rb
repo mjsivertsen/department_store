@@ -8,10 +8,12 @@ def index
 end
 
 def new
-  render component: "Item", props: {item: @item}
+  render component: "Item", props: {department: @department, item: @item }
 end
 
 def create
+  @item.comments.create(comment_params)
+    redirect_to department_item_path( @item.department_id, @item.id)
 end
 
 def show
@@ -33,7 +35,7 @@ def set_department
 end
 
 def set_item
-  @item = @department.items.find(params[:id])
+  @item = @department.items.find(params[:item_id])
 end
 
 def set_comment
@@ -46,6 +48,10 @@ end
 
 def item_params
   params.require(:item).permit(:name, :price, :description)
+end
+
+def department_params
+  params.require(:department).permit(:name, :description)
 end
 
 

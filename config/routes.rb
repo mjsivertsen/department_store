@@ -5,7 +5,9 @@ root "departments#index"
 # I WANT TO DO A HOMEPAGE OR AN ABOUT PAGE OR SOMETHING INSTEAD
 
 resources :departments do
-  resources :items
+  resources :items do
+    resources :comments
+  end
 end
 
 resources :items do
