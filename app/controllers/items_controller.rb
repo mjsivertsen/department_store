@@ -34,7 +34,7 @@ before_action :set_item, only: [:show, :edit, :update, :destroy]
     end
 
     def destroy
-      @item.delete
+      @item.destroy
       redirect_to department_items_path
     end
 

@@ -37,7 +37,7 @@ def update
 end
 
 def destroy
-  @department.delete
+  @department.destroy
   redirect_to root_path
 end
 
