@@ -6,11 +6,10 @@ const Item = (props) => {
   const renderComments = () => {
     return comments.map((comment) => {
       return(
-        <div style={{border:"2px solid grey", width:"500px"}}>
-          <h4> Purchased by:</h4>
+        <div style={{border:"2px solid grey", height:"200px", width:"500px"}}>
+          <h5> Purchased by:</h5>
           <p>{comment.purchased_by}</p>
-          <h4>Comment:</h4>
-          <br/>
+          <h5>Comment:</h5>
           <p>{comment.body}</p>
         </div>
         )
@@ -32,8 +31,8 @@ const Item = (props) => {
   return (
     <div>
       <h1>{item.name}</h1>
-      <h3>{`${item.price}`}</h3>
-      <p>{item.description}</p>
+      <h2>Price: {`${item.price}`}</h2>
+      <h3>Description: {`${item.description}`}</h3>
       {renderComments()}
       <h4>Leave a Comment!</h4>
       {NewComment()}
